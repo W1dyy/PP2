@@ -1,8 +1,13 @@
 import datetime 
 
-x = datetime.datetime.now()
+a = input()
 
-y = datetime.datetime.now().replace(minute=56)
+b = input()
+
+format = "%Y-%m-%d %H:%M:%S"
+
+x = datetime.strptime(a, format)
+y = datetime.strptime(b, format)
 
 if x > y:
     c = x-y
@@ -10,4 +15,4 @@ if x > y:
 else:
     c = y-x
 
-print(c)
+print(c.total_seconds())
