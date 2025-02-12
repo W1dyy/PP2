@@ -1,18 +1,15 @@
 def thr(num):
     
-    ls = []
+    for i in range (0, num+1):
+        if i%3==0 and i%4==0:
+            yield i
 
-    cnt = 0
-
-    while cnt < num:
-        if cnt%3==0 and cnt%4==0:
-            ls.append(cnt)
-        cnt+=1
-
-    return ls
+    
 
 
 x = int(input())
 
+y = thr(x)
 
-print(thr(x))
+for i in y:
+    print(i, end=" ")
