@@ -1,17 +1,12 @@
 def gen(num):
-    ls = []
-
-    cnt = 2
-
-    while cnt < num:
-        ls.append(cnt)
-
-        cnt+=2
-
-    return ls
+    
+    for i in range (0, num+1):
+        if i%2==0:
+            yield i
 
 x = int(input())
 
 y = gen(x)
 
-print(y)
+for i in y:
+    print(i, end=" ")
