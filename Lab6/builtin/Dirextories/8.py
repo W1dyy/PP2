@@ -9,6 +9,3 @@ def delete_file(path):
             print(f"Cannot delete {path}.")
     else:
         print(f"{path} does not exist.")
-
-
-delete_file("file_to_delete.txt")
