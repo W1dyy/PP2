@@ -1,11 +1,13 @@
-import re
+txt = input(
+)
 
-txt = input()
+words = txt.split('_')
 
+print(words[0],end='')
 
+for i in words:
 
-def to(text):
-    return ''.join(word.capitalize() if i != 0 else word for i, word in enumerate(text.split('_')))
-
-
-print(to(txt))
+    if i == words[0]:
+        continue
+    else:
+        print(i[0].upper() + i[1:],end='')
