@@ -1,10 +1,10 @@
-class Shape:
-    def area(self):
-        return 0
+import re
 
-class Square(Shape):
-    def __init__(self, length):
-        self.length = length
-    
-    def area(self):
-        return self.length ** 2
+def match_pattern(text): 
+    match = re.fullmatch(r'ab{2,3}', text) 
+    return bool(match)
+
+
+test_strings = input()
+
+print(match_pattern(test_strings))
