@@ -10,14 +10,14 @@ def main():
     mode = 'blue'  
     drawing_mode = 'brush'  
     points = []  
-    shapes = []  # drawaed shapes
-    start_pos = None #start position 
+    shapes = [] 
+    start_pos = None  
 
     while True:
         pressed = pygame.key.get_pressed()
         alt_held = pressed[pygame.K_LALT] or pressed[pygame.K_RALT]
         ctrl_held = pressed[pygame.K_LCTRL] or pressed[pygame.K_RCTRL]
-        #handle events
+        
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
@@ -29,7 +29,7 @@ def main():
                 if event.key == pygame.K_ESCAPE:
                     return
 
-                # change color
+               
                 if event.key == pygame.K_r:
                     mode = 'red'
                 elif event.key == pygame.K_g:
@@ -39,7 +39,7 @@ def main():
                 elif event.key == pygame.K_e:
                     drawing_mode = 'eraser'  
 
-                #shape coice
+                
                 elif event.key == pygame.K_t:
                     drawing_mode = 'rect'  
                 elif event.key == pygame.K_c:
@@ -52,7 +52,7 @@ def main():
                     drawing_mode = 'equilateral_triangle' 
                 elif event.key == pygame.K_h:
                     drawing_mode = 'rhombus'  
-            #handle mouse control
+            
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:  
                     start_pos = event.pos
@@ -65,7 +65,7 @@ def main():
 
         screen.fill((0, 0, 0))  
 
-        #draw shapes from list
+       
         for shape in shapes:
             draw_shape(screen, shape[0], shape[1], shape[2], shape[3])
 
@@ -100,14 +100,5 @@ def get_color(mode):
 
 main()
 
-# Управление:
-# R, G, B — color choice
-# E — eraser
-# T — rectangle
-# C — circle
-# S — square
-# Y — right rectangle
-# U — right triangle
-# H — rhombus   
-# LeftMouseButton - to start draw
+
 
